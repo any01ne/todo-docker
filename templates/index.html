@@ -36,11 +36,11 @@
                     </div>
                     <div>
                         {% if not task.done %}
-                            <a href="/done/{{ task.key }}" class="btn btn-sm btn-success me-1">
+                            <a href="/done/{{ loop.index0 }}" class="btn btn-sm btn-success me-1">
                                 <span class="material-symbols-outlined">done</span>
                             </a>
                         {% endif %}
-                        <a href="/delete/{{ task.key }}" class="btn btn-sm btn-danger">
+                        <a href="/delete/{{ loop.index0 }}" class="btn btn-sm btn-danger">
                             <span class="material-symbols-outlined">delete</span>
                         </a>
                     </div>
