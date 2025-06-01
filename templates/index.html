@@ -8,6 +8,7 @@
     <style>
         .material-symbols-outlined {
             vertical-align: middle;
+            font-size: 20px;
         }
     </style>
 </head>
@@ -15,7 +16,7 @@
 
 <div class="container mt-5">
     <div class="card shadow p-4">
-        <h1 class="text-center mb-4">📝 Moja Lista To-Do</h1>
+        <h1 class="text-center mb-4">📋 Lista zadań (To-Do)</h1>
 
         <form method="post" class="d-flex mb-3">
             <input type="text" name="task" class="form-control me-2" placeholder="Wpisz nowe zadanie..." required>
@@ -35,11 +36,11 @@
                     </div>
                     <div>
                         {% if not task.done %}
-                            <a href="/done/{{ loop.index0 }}" class="btn btn-sm btn-success me-1">
+                            <a href="/done/{{ task.key }}" class="btn btn-sm btn-success me-1">
                                 <span class="material-symbols-outlined">done</span>
                             </a>
                         {% endif %}
-                        <a href="/delete/{{ loop.index0 }}" class="btn btn-sm btn-danger">
+                        <a href="/delete/{{ task.key }}" class="btn btn-sm btn-danger">
                             <span class="material-symbols-outlined">delete</span>
                         </a>
                     </div>
